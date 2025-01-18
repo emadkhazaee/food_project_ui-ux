@@ -1,6 +1,6 @@
 # food_land
 
-A new Flutter project.
+food_land_ui-ux
 
 ## Getting Started
 
