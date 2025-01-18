@@ -62,8 +62,20 @@ flutter:
   assets:
     - assets/images/basket_welcome.png
     - assets/images/shadow_basket_welcome.png
-    # - assets/images/basket_Authentication.png
-    # - assets/images/shadow_basket_Authentication.png
+    - assets/images/basket_Authentication.png
+    - assets/images/shadow_basket_Authentication.png
+    - assets/images/drawer.png
+    - assets/images/mybasket.png
+    - assets/images/setting.png
+    - assets/images/food1.png
+    - assets/images/add.png
+    - assets/images/food2.png
+    - assets/images/foodm1.png
+    - assets/images/foodm2.png
+    - assets/images/foodm3.png
+
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
