@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_land/data/combo_list.dart';
 import 'package:food_land/data/menu_list.dart';
+import 'package:food_land/screen/Add_to_basket/add_to_basket.dart';
+import 'package:food_land/screen/Order_list/order_list.dart';
 
 class home_screen extends StatefulWidget {
   const home_screen({super.key});
@@ -12,7 +14,6 @@ class home_screen extends StatefulWidget {
 class _home_screenState extends State<home_screen> {
   int selectedIndex = 0;
   List<String> names = ['Hottest', 'Popular', 'New combo', 'Top'];
-  List<Color> colors = [Colors.red, Colors.blue, Colors.green, Colors.orange];
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +38,18 @@ class _home_screenState extends State<home_screen> {
                       height: 30,
                       width: 30,
                     ),
-                    const Icon(
-                      Icons.shopping_cart_checkout,
-                      color: Color.fromARGB(255, 255, 165, 81),
-                      size: 35,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => order_list()));
+                      },
+                      child: const Icon(
+                        Icons.shopping_cart_checkout,
+                        color: Color.fromARGB(255, 255, 165, 81),
+                        size: 35,
+                      ),
                     )
                   ],
                 ),
@@ -100,8 +109,8 @@ class _home_screenState extends State<home_screen> {
                   ],
                 ),
                 const SizedBox(height: 40),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       'Recommended Combo',
                       style: TextStyle(
@@ -122,62 +131,66 @@ class _home_screenState extends State<home_screen> {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 235,
-                          width: 180,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: const [
-                                    Icon(
-                                      Icons.favorite_border,
-                                      color: Color.fromARGB(255, 255, 165, 81),
-                                    ),
-                                  ],
-                                ),
-                                Center(
-                                  child: Column(
-                                    children: [
-                                      Image.asset(comboData[index]["image"]),
-                                      const SizedBox(height: 10),
-                                      Text(
-                                        comboData[index]["name"],
-                                        style: const TextStyle(
-                                          color: Color.fromARGB(255, 0, 0, 0),
-                                          fontWeight: FontWeight.w800,
-                                          fontSize: 16,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 235,
+                            width: 180,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: const [
+                                      Icon(
+                                        Icons.favorite_border,
+                                        color:
+                                            Color.fromARGB(255, 255, 165, 81),
                                       ),
                                     ],
                                   ),
-                                ),
-                                const SizedBox(height: 20),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$${comboData[index]["price"]}',
-                                      style: const TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 165, 81),
-                                        fontWeight: FontWeight.w300,
-                                      ),
+                                  Center(
+                                    child: Column(
+                                      children: [
+                                        Image.asset(comboData[index]["image"]),
+                                        const SizedBox(height: 10),
+                                        Text(
+                                          comboData[index]["name"],
+                                          style: const TextStyle(
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                            fontWeight: FontWeight.w800,
+                                            fontSize: 16,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      ],
                                     ),
-                                    Image.asset('assets/images/add.png',
-                                        height: 30, width: 30),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '\$${comboData[index]["price"]}',
+                                        style: const TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 255, 165, 81),
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                      Image.asset('assets/images/add.png',
+                                          height: 30, width: 30),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -220,65 +233,74 @@ class _home_screenState extends State<home_screen> {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 200,
-                          width: 180,
-                          decoration: BoxDecoration(
-                            color: boxColors[index],
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: const [
-                                    Icon(
-                                      Icons.favorite_border,
-                                      color: Color.fromARGB(255, 255, 165, 81),
-                                    ),
-                                  ],
-                                ),
-                                Center(
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        menu[index]["image"],
-                                        height: 50,
-                                      ),
-                                      const SizedBox(height: 5),
-                                      Text(
-                                        menu[index]["name"],
-                                        style: const TextStyle(
-                                          color: Color.fromARGB(255, 0, 0, 0),
-                                          fontWeight: FontWeight.w800,
-                                          fontSize: 16,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => add_to_basket()));
+                          },
+                          child: Container(
+                            height: 200,
+                            width: 180,
+                            decoration: BoxDecoration(
+                              color: boxColors[index],
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: const [
+                                      Icon(
+                                        Icons.favorite_border,
+                                        color:
+                                            Color.fromARGB(255, 255, 165, 81),
                                       ),
                                     ],
                                   ),
-                                ),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$${menu[index]["price"]}',
-                                      style: const TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 165, 81),
-                                        fontWeight: FontWeight.w300,
-                                      ),
+                                  Center(
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          menu[index]["image"],
+                                          height: 50,
+                                        ),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                          menu[index]["name"],
+                                          style: const TextStyle(
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                            fontWeight: FontWeight.w800,
+                                            fontSize: 16,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      ],
                                     ),
-                                    Image.asset('assets/images/add.png',
-                                        height: 30, width: 30),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '\$${menu[index]["price"]}',
+                                        style: const TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 255, 165, 81),
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                      Image.asset('assets/images/add.png',
+                                          height: 30, width: 30),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

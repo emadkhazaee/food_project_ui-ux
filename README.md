@@ -1,10 +1,6 @@
 # food_land
 
-<<<<<<< HEAD
 food_land ui-ux
-=======
-food_land_ui-ux
->>>>>>> 27dc4670f808b4ff8323567fa72fa2be132b8dc1
 
 ## Getting Started
 
