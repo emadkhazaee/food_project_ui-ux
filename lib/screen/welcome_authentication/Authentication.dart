@@ -1,6 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:food_land/screen/home_screen/home_screen.dart';
 
+// ignore: camel_case_types
 class authentication extends StatelessWidget {
   const authentication({super.key});
 
@@ -10,18 +12,18 @@ class authentication extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return MaterialApp(
-      theme: new ThemeData(
-          scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255)),
+      theme: ThemeData(
+          scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255)),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 229, 229, 229),
+          backgroundColor: const Color.fromARGB(255, 229, 229, 229),
           body: Column(
             children: [
               Container(
                 height: height / 1.6,
                 width: double.infinity,
-                decoration:
-                    BoxDecoration(color: Color.fromARGB(255, 255, 165, 81)),
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 255, 165, 81)),
                 child: Center(
                   child: Column(
                     children: [
@@ -33,7 +35,7 @@ class authentication extends StatelessWidget {
                         height: 200,
                         width: 240,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Image.asset(
@@ -58,24 +60,18 @@ class authentication extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    TextField(
-                      // controller: phoneController,
-                      // style: normaltext2,
-                      // maxLength: 11,
+                    const TextField(
                       cursorColor: Colors.white,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                         filled: true,
-                        // fillColor: backGroundlight,
-                        // border: OutlineInputBorder(),
                         labelText: 'your name',
-                        // labelStyle: normaltext2,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Center(
@@ -84,12 +80,12 @@ class authentication extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => home_screen()));
+                                  builder: (context) => const home_screen()));
                         },
                         style: ElevatedButton.styleFrom(
                           fixedSize: Size(width, 50),
-                          backgroundColor:
-                              Color.fromARGB(255, 255, 165, 81), // رنگ پس‌زمینه
+                          backgroundColor: const Color.fromARGB(
+                              255, 255, 165, 81), // رنگ پس‌زمینه
                           shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.circular(10), // گوشه‌های گرد

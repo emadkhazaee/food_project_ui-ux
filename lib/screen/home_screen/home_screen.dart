@@ -4,6 +4,7 @@ import 'package:food_land/data/menu_list.dart';
 import 'package:food_land/screen/Add_to_basket/add_to_basket.dart';
 import 'package:food_land/screen/Order_list/order_list.dart';
 
+// ignore: camel_case_types
 class home_screen extends StatefulWidget {
   const home_screen({super.key});
 
@@ -11,6 +12,7 @@ class home_screen extends StatefulWidget {
   State<home_screen> createState() => _home_screenState();
 }
 
+// ignore: camel_case_types
 class _home_screenState extends State<home_screen> {
   int selectedIndex = 0;
   List<String> names = ['Hottest', 'Popular', 'New combo', 'Top'];
@@ -43,7 +45,7 @@ class _home_screenState extends State<home_screen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => order_list()));
+                                builder: (context) => const order_list()));
                       },
                       child: const Icon(
                         Icons.shopping_cart_checkout,
@@ -54,8 +56,8 @@ class _home_screenState extends State<home_screen> {
                   ],
                 ),
                 const SizedBox(height: 40),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       'Hello tony,',
                       style: TextStyle(
@@ -73,8 +75,8 @@ class _home_screenState extends State<home_screen> {
                     )
                   ],
                 ),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       'combo do you want today?',
                       style: TextStyle(
@@ -144,9 +146,9 @@ class _home_screenState extends State<home_screen> {
                               padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 children: [
-                                  Row(
+                                  const Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: const [
+                                    children: [
                                       Icon(
                                         Icons.favorite_border,
                                         color:
@@ -198,7 +200,7 @@ class _home_screenState extends State<home_screen> {
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -238,7 +240,8 @@ class _home_screenState extends State<home_screen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => add_to_basket()));
+                                    builder: (context) =>
+                                        const add_to_basket()));
                           },
                           child: Container(
                             height: 200,
@@ -251,9 +254,9 @@ class _home_screenState extends State<home_screen> {
                               padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 children: [
-                                  Row(
+                                  const Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: const [
+                                    children: [
                                       Icon(
                                         Icons.favorite_border,
                                         color:

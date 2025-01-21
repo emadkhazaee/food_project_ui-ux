@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class add_to_basket extends StatefulWidget {
   const add_to_basket({super.key});
 
@@ -13,7 +14,7 @@ class _AddToBasketState extends State<add_to_basket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 165, 81),
+      backgroundColor: const Color.fromARGB(255, 255, 165, 81),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,14 +30,12 @@ class _AddToBasketState extends State<add_to_basket> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.arrow_back_ios,
-                          color: Colors.black, size: 16),
-                      const SizedBox(width: 8),
-                      const Text('Go back',
-                          style: TextStyle(color: Colors.black)),
+                      Icon(Icons.arrow_back_ios, color: Colors.black, size: 16),
+                      SizedBox(width: 8),
+                      Text('Go back', style: TextStyle(color: Colors.black)),
                     ],
                   ),
                 ),
@@ -50,7 +49,7 @@ class _AddToBasketState extends State<add_to_basket> {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Expanded(
@@ -122,7 +121,7 @@ class _AddToBasketState extends State<add_to_basket> {
                         ],
                       ),
                       const SizedBox(height: 16),
-                      Divider(
+                      const Divider(
                         color: Color.fromARGB(255, 255, 165, 81),
                       ),
                       const SizedBox(height: 16),
@@ -140,7 +139,7 @@ class _AddToBasketState extends State<add_to_basket> {
                         style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                       ),
                       const SizedBox(height: 12),
-                      Divider(
+                      const Divider(
                         color: Color(0xFFF3F3F3),
                       ),
                       const SizedBox(height: 12),
@@ -157,9 +156,9 @@ class _AddToBasketState extends State<add_to_basket> {
                             height: 59,
                             width: 220,
                             decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 255, 165, 81),
+                                color: const Color.fromARGB(255, 255, 165, 81),
                                 borderRadius: BorderRadius.circular(12)),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Add to basket',
                                 style: TextStyle(

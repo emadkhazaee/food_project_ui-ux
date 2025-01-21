@@ -1,6 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:food_land/screen/welcome_authentication/Authentication.dart';
 
+// ignore: camel_case_types
 class welcome_screen extends StatelessWidget {
   const welcome_screen({super.key});
 
@@ -10,8 +12,8 @@ class welcome_screen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return MaterialApp(
-      theme: new ThemeData(
-          scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255)),
+      theme: ThemeData(
+          scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255)),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           body: Column(
@@ -19,7 +21,8 @@ class welcome_screen extends StatelessWidget {
           Container(
             height: height / 1.6,
             width: double.infinity,
-            decoration: BoxDecoration(color: Color.fromARGB(255, 255, 165, 81)),
+            decoration:
+                const BoxDecoration(color: Color.fromARGB(255, 255, 165, 81)),
             child: Center(
               child: Column(
                 children: [
@@ -31,7 +34,7 @@ class welcome_screen extends StatelessWidget {
                     height: 200,
                     width: 240,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Image.asset(
@@ -56,22 +59,20 @@ class welcome_screen extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  child: const Wrap(
-                    children: [
-                      Text(
-                        'We deliver the best and freshest fruit salad in town. Order for a combo today!!!',
-                        style: TextStyle(
-                            color: Color(0xFF5D577E),
-                            fontWeight: FontWeight.w200),
-                      )
-                    ],
-                  ),
+                const Wrap(
+                  children: [
+                    Text(
+                      'We deliver the best and freshest fruit salad in town. Order for a combo today!!!',
+                      style: TextStyle(
+                          color: Color(0xFF5D577E),
+                          fontWeight: FontWeight.w200),
+                    )
+                  ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Center(
@@ -80,12 +81,12 @@ class welcome_screen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => authentication()));
+                              builder: (context) => const authentication()));
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(width, 50),
-                      backgroundColor:
-                          Color.fromARGB(255, 255, 165, 81), // رنگ پس‌زمینه
+                      backgroundColor: const Color.fromARGB(
+                          255, 255, 165, 81), // رنگ پس‌زمینه
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10), // گوشه‌های گرد
                       ),

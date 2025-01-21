@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class order_complete extends StatelessWidget {
   const order_complete({super.key});
 
@@ -19,13 +20,14 @@ class order_complete extends StatelessWidget {
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
-                fixedSize: Size(133, 56),
-                backgroundColor: Color.fromARGB(255, 255, 165, 81),
+                fixedSize: const Size(133, 56),
+                backgroundColor: const Color.fromARGB(255, 255, 165, 81),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: Text('Track order', style: TextStyle(color: Colors.white)),
+              child: const Text('Track order',
+                  style: TextStyle(color: Colors.white)),
             ),
             ElevatedButton(
               onPressed: () {
@@ -33,7 +35,6 @@ class order_complete extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: const Text('Continue shopping'),
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(181, 50),
                 backgroundColor: Colors.white,
@@ -46,6 +47,7 @@ class order_complete extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
+              child: const Text('Continue shopping'),
             ),
           ],
         ),

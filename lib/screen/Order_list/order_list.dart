@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_land/screen/Order_list/Order_complete/order_complete.dart';
 
+// ignore: camel_case_types
 class order_list extends StatefulWidget {
   const order_list({Key? key}) : super(key: key);
 
@@ -121,7 +122,7 @@ class _OrderListScreenState extends State<order_list> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Total:', style: TextStyle(fontSize: 16)),
+              const Text('Total:', style: TextStyle(fontSize: 16)),
               Text('\$ $total',
                   style: const TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold)),
@@ -267,10 +268,10 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
         child: Container(
             padding: const EdgeInsets.all(24),
             child: Column(mainAxisSize: MainAxisSize.min, children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text('Delivery Address',
+                  Text('Delivery Address',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -285,10 +286,10 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                 ),
               ),
               const SizedBox(height: 24),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text('Number we can call',
+                  Text('Number we can call',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -308,7 +309,6 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: const Text('Pay on delivery'),
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(150, 50),
                       backgroundColor: Colors.white,
@@ -321,6 +321,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
+                    child: const Text('Pay on delivery'),
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -328,7 +329,6 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                         showCardDetails = true;
                       });
                     },
-                    child: const Text('Pay with card'),
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(150, 50),
                       backgroundColor: Colors.white,
@@ -341,6 +341,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
+                    child: const Text('Pay with card'),
                   ),
                 ],
               ),
@@ -348,12 +349,12 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
   }
 
   Widget _buildCardDetails() {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     String? cardHolderName;
     String? cardNumber;
     String? expiryDate;
     String? cvv;
-    return Container(
+    return SizedBox(
         width: double.infinity,
         height: MediaQuery.of(context).size.height / 1.5,
         child: Padding(
@@ -363,15 +364,15 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
               right: 16,
               top: 24),
           child: Form(
-            key: _formKey,
+            key: formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text('Card Holders Name',
+                    Text('Card Holders Name',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -386,10 +387,10 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                   ),
                 ),
                 const SizedBox(height: 24),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text('Card Number',
+                    Text('Card Number',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -403,12 +404,12 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           filled: true,
                           labelText: 'Date',
                           border: OutlineInputBorder(),
@@ -423,10 +424,10 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                         onSaved: (value) => expiryDate = value,
                       ),
                     ),
-                    SizedBox(width: 16),
+                    const SizedBox(width: 16),
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'CCV',
                           filled: true,
                           border: OutlineInputBorder(),
@@ -446,25 +447,25 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                     ),
                   ],
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => order_complete()));
+                            builder: (context) => const order_complete()));
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 255, 165, 81),
-                    minimumSize: Size(double.infinity, 50),
+                    backgroundColor: const Color.fromARGB(255, 255, 165, 81),
+                    minimumSize: const Size(double.infinity, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: Text('Complete Order',
+                  child: const Text('Complete Order',
                       style: TextStyle(color: Colors.white)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 )
               ],
