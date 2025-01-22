@@ -85,10 +85,9 @@ class welcome_screen extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(width, 50),
-                      backgroundColor: const Color.fromARGB(
-                          255, 255, 165, 81), // رنگ پس‌زمینه
+                      backgroundColor: const Color.fromARGB(255, 255, 165, 81),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // گوشه‌های گرد
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     child: const Text(
